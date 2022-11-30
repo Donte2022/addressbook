@@ -43,7 +43,7 @@ export class AppComponent {
       relation: 'co-worker'
     },
   ]
-
+  //
   onContactInputSubmit(contact: IContact) {
     if (contact.id === "") {
       this.addContact(contact);
@@ -59,7 +59,7 @@ export class AppComponent {
     contact.id = uuidv4();
     this.contactList.push(contact);
   }
-
+  //
   updateContact(updatedContact: IContact) {
     const index = this.contactList.findIndex(contact => contact.id === updatedContact.id);
     if (index === -1) {
@@ -69,7 +69,7 @@ export class AppComponent {
 
     this.contactList[index] = updatedContact;
   }
-
+  //
   deleteContact(id: string) {
     this.contactList = this.contactList.filter(
       contact => contact.id !== id
@@ -91,7 +91,7 @@ export class AppComponent {
 
     this.isLoggedIn = true;
   }
-
+  //
   newContact() {
     this.selectedContact = {
       id: "",
@@ -106,12 +106,12 @@ export class AppComponent {
       notes: "",
     }
   }
-
+  //
   cancelCreate() {
     this.selectedContact = null;
   }
 
-
+  //
   updateContactSelect(id: string) {
     const contact = this.contactList.find(contact => contact.id === id);
     if (contact === undefined) {
